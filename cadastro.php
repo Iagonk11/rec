@@ -8,7 +8,7 @@
 
     if(isset($_POST["Excluir"]))
     {
-    $comando = $pdo->prepare("DELETE FROM cadastro where Email=$email");
+    $comando = $pdo->prepare("DELETE FROM cadastro where Nome='$nome'");
     $resultado = $comando->execute();
     header("Location: index.html");
     }
@@ -21,37 +21,13 @@
         header("Location: index.html");
     }
     
-    if(isset($_POST["Pesquisar"]))
-    {
-        $comando = $pdo->prepare("SELECT * FROM cadastros where id_cadastro=$id_cadastro");
-
-        $resultado = $comando->execute();
-        while ($linhas = $comando->fetch())
-    {
-        
-            $c = $linhas["CPF"];
-            $e = $linhas["Email"];
-            $u = $linhas["Usuario"];
-            $s = $linhas["Senha"];
-            $id = $linhas["id_cadastro"];
-            echo($id);
-            $cep = $linhas["CEP"];
-            if($id>0)
-            {
-            echo("<br> <b>$c</b> $e $u $s $id $cep <br> <br>");
-            }
-            else
-            {
-                header("Location:index.html");
-            }
-    }
-    }
+   
 
     if(isset($_POST["Alterar"]))
     {
-    $comando = $pdo->prepare("UPDATE cadastro SET Nome='$nome', Email='$email', Telefone='$telefone' WHERE Email='$email'");
+    $comando = $pdo->prepare("UPDATE cadastro SET Nome='$nome', Email='$email', Telefone='$telefone' WHERE Nome='$nome'");
     $resultado = $comando->execute();
     header("Location: index.html");
     }
-
+    header("Location: index.html");
 ?>
