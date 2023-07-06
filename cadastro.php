@@ -29,5 +29,6 @@
     $resultado = $comando->execute();
     header("Location: index.html");
     }
+    if(isset($_POST["Listar"]))
     header("Location: index.html");
 ?>
