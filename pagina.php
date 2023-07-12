@@ -25,27 +25,35 @@ $resultado = $comando->execute();
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
         body{
+            max-width: 100%;
             font-family: 'Poppins', sans-serif;
             display: flex;
             align-items: center;
             align-content: center;
+            justify-content: center;
+            justify-items: center;
             flex-direction: column;
-        }
+            margin: 0 auto;
+            margin-left: 0px;
+            padding: 1px;
+            background-color: #f3f3f3;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
 
-        .cadastro{
-            width: 80%;
         }
 
         fieldset input{
-            width: 18%
+            width: 18%;
         }
 
         .pesquisa input{
-            width: 40%
+            width: 50%;
         }
 
         .usuario{
-            width: 100%
+            width: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .usuariot{
@@ -53,7 +61,10 @@ $resultado = $comando->execute();
             border-collapse: collapse;
             border: 1px solid black;
             text-align: center;
+            font-size:10px;
         }
+
+       
 
         thead{
             background-color: #000;
@@ -77,7 +88,7 @@ $resultado = $comando->execute();
                 <legend> Pesquisar Usuário </legend>
                 
                         <input type="text" name="nome" placeholder="Nome do Usuário">
-                        <input type="submit" class="botaoen" value="Pesquisar" style="width: 10%;">
+                        <input type="submit" class="botaoen" value="Pesquisar" style="width: 30%;">
                  
                </fieldset>
             </form>
@@ -125,7 +136,7 @@ $resultado = $comando->execute();
                                     <td>$telefone</td>
                                     <td>$email</td>
                                     <td>
-                                    <img src='img/lapis.png' width='25px' onclick=\"Editar('$nome','$id','$telefone','$email');\" >
+                                    <img src='image/lapis.png' width='25px' onclick=\"Editar('$nome','$id','$telefone','$email');\" >
                                     </td>
                                 </tr>
                             ");

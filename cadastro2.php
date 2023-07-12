@@ -8,7 +8,7 @@
 
     if(isset($_POST["inserir"]))
     {
-        $comando = $pdo->prepare("INSERT INTO cadastro(id,Nome,Email,Telefone) VALUES('$id', $nome','$email','$telefone')");
+        $comando = $pdo->prepare("INSERT INTO cadastro(Nome,Email,Telefone) VALUES('$nome','$email','$telefone')");
         $resultado = $comando->execute();
     
         // para voltar no forms
